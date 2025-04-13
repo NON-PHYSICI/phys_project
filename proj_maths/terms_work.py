@@ -1,15 +1,17 @@
 def get_terms_for_table():
+    """Метод по получению информации о таблице терминов"""
     terms = []
     with open("./data/terms.csv", "r", encoding="utf-8") as f:
         cnt = 1
         for line in f.readlines()[1:]:
-            term, definition, source = line.split(";")
+            term, definition, _ = line.split(";")
             terms.append([cnt, term, definition])
             cnt += 1
     return terms
 
 
 def write_term(new_term, new_definition):
+    """Метод записывающий новый термин в базу данных"""
     new_term_line = f"{new_term};{new_definition};user"
     with open("./data/terms.csv", "r", encoding="utf-8") as f:
         existing_terms = [l.strip("\n") for l in f.readlines()]
@@ -23,12 +25,13 @@ def write_term(new_term, new_definition):
 
 
 def get_terms_stats():
+    """Метод по получению информации о статистике терминов"""
     db_terms = 0
     user_terms = 0
     defin_len = []
     with open("./data/terms.csv", "r", encoding="utf-8") as f:
         for line in f.readlines()[1:]:
-            term, defin, added_by = line.split(";")
+            _, defin, added_by = line.split(";")
             words = defin.split()
             defin_len.append(len(words))
             if "user" in added_by:
