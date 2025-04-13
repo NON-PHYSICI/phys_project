@@ -22,5 +22,8 @@ urlpatterns = [
     path('terms-list', views.terms_list),
     path('add-term', views.add_term),
     path('send-term', views.send_term),
-    path('stats', views.show_stats)
+    path('send-video-ref', views.send_video_ref),
+    path('stats', views.show_stats),
+    path('video-reference-list', views.video_ref_list),
+    path('video-reference-add', views.add_video_ref)
 ]
