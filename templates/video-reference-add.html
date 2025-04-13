@@ -1,0 +1,33 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+Добавить ссылку на ресурс
+{% endblock %}
+
+{% block content %}
+<div class="container-sm px-5 py-5" id="term-form">
+    <form method="post">
+        <div class="row px-5 py-2">
+            <h3>Ваша ссылка</h3>
+        </div>
+        <div class="row px-5 py-2">
+            <div class="col-md-4">
+                <label for="new_term">Предмет ссылки</label>
+                <input type="text" class="form-control input-lg" name="new_term" id="new_term">
+            </div>
+            <div class="col-md-4">
+                <label for="new_term">Ссылка</label>
+                <input type="text" class="form-control input-lg" name="new_ref" id="new_ref">
+            </div>
+            <div class="col-md-8">
+                <label for="new_ref_definition">Пояснение к ссылке</label>
+                <textarea type="text" class="form-control input-lg" name="new_ref_definition" id="new_ref_definition" aria-describedby="definition_note" rows="3"></textarea>
+                <div id="definition_note" class="form-text">Постарайтесь уложиться в одно, максимум два предложения</div>
+            </div>
+        </div>
+        <div class="row px-5 py-2">
+            <button type="submit" class="btn btn-primary" formaction="/send-video-ref">Отправить</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
