@@ -4,13 +4,6 @@
 Добавить термин
 {% endblock %}
 
-{% block page-lead %}
-Когда вы нажмёте на кнопку &laquo;Отправить&raquo;, веб-приложению отправится POST-запрос.
-При этом в полях <span class="fst-italic">Имя</span> и <span class="fst-italic">Email</span> есть атрибут
-<code>value required</code>, который подсказывает пользователю о необходимости заполнения — это свойство Bootstrap.
-{% endblock %}
-
-
 {% block content %}
 <div class="container-sm px-5 py-5" id="term-form">
     <form method="post">
